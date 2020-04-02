@@ -1,0 +1,255 @@
+<div class="cont">
+
+  <h3 class="row pt-5  ">  Reporte las horas extras del personal</h3>
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0">Agregar reporte</h3>
+            </div>
+            <div class="card-body">
+                <form class="from">
+                    <div class="form-group">
+                        <label for="">Documento</label>
+                        <input [(ngModel)]="user.documento" name='documento' type="text" class="form-control round" required> 
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nombres</label>
+                        <input [(ngModel)]="user.nombres" name='nombres'type="text" class="form-control round" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Apellidos</label>
+                      <input [(ngModel)]="user.apellidos" name='apellidos' type="text" class="form-control round" required> 
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                      <mat-form-field>
+                        <mat-label>Fecha Inicio</mat-label>
+                        <input [(ngModel)]="user.fecha_inicio" name='fecha_inicio' class="form-control round" required matInput [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+  
+                      
+                    </div></div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <mat-form-field>
+                          <mat-label>Fecha Fin</mat-label>
+                          <input [(ngModel)]="user.fecha_fin" name='fecha_fin'  class="form-control round" required matInput [matDatepicker]="picker2">
+                          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                          <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                  
+                      </div>
+                    </div>
+                  </div>
+                  <p>Hora de inicio de turno</p>
+                  <div class="row">
+                    
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Hora</mat-label>
+                        <mat-select [(value)]="hoursSelectInit">
+                          <mat-option *ngFor="let item of hours" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Minuto</mat-label>
+                        <mat-select [(value)]="minSelectInit">
+                          <mat-option *ngFor="let item of min" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <p>Hora de fin de turno</p>
+                  <div class="row">
+                    
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Hora</mat-label>
+                        <mat-select [(value)]="hoursSelectEnd">
+                          <mat-option *ngFor="let item of hours" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Minuto</mat-label>
+                        <mat-select [(value)]="minSelectEnd">
+                          <mat-option *ngFor="let item of min" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-success" (click)= "addHoursEx()" >Agregar Hora Extra</button> 
+                  
+                  <div *ngIf="horas_extras.length > 0">
+                    Horas extras
+                    <div *ngFor="let item of horas_extras">
+
+                      <p>Hora extra inicio</p>
+                  <div class="row">
+                    
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Hora</mat-label>
+                        <mat-select [(value)]="hoursExSelectInit">
+                          <mat-option *ngFor="let item of hours" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Minuto</mat-label>
+                        <mat-select [(value)]="minExSelectInit">
+                          <mat-option *ngFor="let item of min" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <p>Hora extra  fin</p>
+                  <div class="row">
+                    
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Hora</mat-label>
+                        <mat-select [(value)]="hoursExSelectEnd">
+                          <mat-option *ngFor="let item of hours" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field>
+                        <mat-label>Minuto</mat-label>
+                        <mat-select [(value)]="minExSelectEnd">
+                          <mat-option *ngFor="let item of min" value="item">{{item}}</mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                    </div> 
+                  </div>
+                     
+                    <button type="button"  (click) = save() class="btn btn-success float-left">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>   
+
+
+<h3 class="container">Tabla  reportes</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th >Documento</th>
+      <th >Nombres</th>
+      <th >Apellidos</th>
+      <th >Fecha Inicio</th>
+      <th>Fecha fin </th>
+      <th>Horario inicio de turno</th>
+      <th>Horario fin de turno</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="flag">
+    <tr  *ngFor="let item of users2">
+      <td>{{item.documento}}</td>
+      <td>{{item.nombres}}</td>
+      <td>{{item.apellidos}}</td>
+      <td>{{item.fecha_inicio}}</td>
+      <td>{{item.fecha_fin}}</td>
+      <td>{{gethour(item.horario_inicio_turno)}}</td>
+      <td>{{gethour(item.horario_fin_turno)}}</td>
+      <td>
+
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+             
+              <mat-panel-title>
+                Horas extras
+              </mat-panel-title>
+            
+            </mat-expansion-panel-header>
+            <div *ngFor="let i of item.horas_extras" >
+              <hr>
+              <p>Inicio: {{gethour(i.inicio_hora_extra)}}</p>
+              <p>Fin: {{gethour(i.fin_Hora_extra)}}</p>
+              <p>Motivo:{{i.motivo_hora_extra}}</p>
+            </div>
+            
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+  <h3 class="container">Tabla de consumo de la api</h3>
+
+  <table class="table ">
+    <thead>
+      <tr>
+        <th >Documento</th>
+        <th >Nombres</th>
+        <th >Apellidos</th>
+        <th >Fecha Inicio</th>
+        <th>Fecha fin </th>
+        <th>Horario inicio de turno</th>
+        <th>Horario fin de turno</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <td>{{item.documento}}</td>
+        <td>{{item.nombres}}</td>
+        <td>{{item.apellidos}}</td>
+        <td>{{item.fecha_inicio}}</td>
+        <td>{{item.fecha_fin}}</td>
+        <td>{{gethour(item.horario_inicio_turno)}}</td>
+        <td>{{gethour(item.horario_fin_turno)}}</td>
+        <td>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+               
+                <mat-panel-title>
+                  Horas extras
+                </mat-panel-title>
+              
+              </mat-expansion-panel-header>
+              <div *ngFor="let i of item.horas_extras" >
+                <hr>
+                <p>Inicio: {{gethour(i.inicio_hora_extra)}}</p>
+                <p>Fin: {{gethour(i.fin_Hora_extra)}}</p>
+                <p>Motivo:{{i.motivo_hora_extra}}</p>
+              </div>
+              
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>
+
+</div>

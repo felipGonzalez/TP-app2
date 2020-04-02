@@ -1,0 +1,80 @@
+[
+
+    {
+        "documento": "1111111",
+        "nombres": "b",
+        "apellidos":"aa",
+        "fecha_inicio": "2020-04-02T09:30:00.000Z",
+        "fecha_fin": "2020-04-02T09:30:00.000Z",
+        "horario_inicio_turno": "2020-04-02T09:30:00.000Z",
+        "horario_fin_turno": "2020-04-02T09:30:00.000Z",
+        "horas_extras" : [{
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "aaaaaa a a a a aa a"
+        },
+        {
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "sadasd  a a a a aa a"
+        }]
+    },
+    {
+        "documento": "222222",
+        "nombres": "b",
+        "apellidos":"aa",
+        "fecha_inicio": "2020-04-02T09:30:00.000Z",
+        "fecha_fin": "2020-04-02T09:30:00.000Z",
+        "horario_inicio_turno": "2020-04-02T09:30:00.000Z",
+        "horario_fin_turno": "2020-04-02T09:30:00.000Z",
+        "horas_extras" : [{
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "aaaaaa a a a a aa a"
+        },
+        {
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "sadasd  a a a a aa a"
+        }]
+    },
+    {
+        "documento": "222222",
+        "nombres": "b",
+        "apellidos":"aa",
+        "fecha_inicio": "2020-04-02T09:30:00.000Z",
+        "fecha_fin": "2020-04-02T09:30:00.000Z",
+        "horario_inicio_turno": "2020-04-02T09:30:00.000Z",
+        "horario_fin_turno": "2020-04-02T09:30:00.000Z",
+        "horas_extras" : [{
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "aaaaaa a a a a aa a"
+        },
+        {
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "sadasd  a a a a aa a"
+        }]
+    },
+    {
+        "documento": "222222",
+        "nombres": "b",
+        "apellidos":"aa",
+        "fecha_inicio": "2020-04-02T09:30:00.000Z",
+        "fecha_fin": "2020-04-02T09:30:00.000Z",
+        "horario_inicio_turno": "2020-04-02T09:30:00.000Z",
+        "horario_fin_turno": "2020-04-02T09:30:00.000Z",
+        "horas_extras" : [{
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "aaaaaa a a a a aa a"
+        },
+        {
+            "inicio_hora_extra": "2020-04-02T19:30:00.000Z",
+            "fin_Hora_extra": "2020-04-02T09:30:00.000Z",
+            "motivo_hora_extra" : "sadasd  a a a a aa a"
+        }]
+    }
+
+]
