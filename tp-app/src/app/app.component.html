@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Nombres</label>
-                        <input [(ngModel)]="user.nombres" name='nombres'type="text" class="form-control round" required>
+                        <input [(ngModel)]="user.nombres" name='motivo'type="text" class="form-control round" required>
                     </div>
                     <div class="form-group">
                       <label for="">Apellidos</label>
@@ -33,7 +33,7 @@
                       </mat-form-field>
   
                       
-                    </div></div>
+                    
                     <div class="col-6">
                       <div class="form-group">
                         <mat-form-field>
@@ -92,7 +92,10 @@
                   <button type="button" class="btn btn-success" (click)= "addHoursEx()" >Agregar Hora Extra</button> 
                   
                   <div *ngIf="horas_extras.length > 0">
-                    Horas extras
+                    <h2>
+                      Horas extras
+                    </h2>
+                    <hr>
                     <div *ngFor="let item of horas_extras">
 
                       <p>Hora extra inicio</p>
